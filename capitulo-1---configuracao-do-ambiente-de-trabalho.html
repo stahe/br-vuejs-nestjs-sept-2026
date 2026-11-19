@@ -1,0 +1,1173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Um exemplo cliente/servidor com Vue.js/NestJS">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/br-vuejs-nestjs-sept-2026/capitulo-1---configuracao-do-ambiente-de-trabalho.html">
+      
+      
+        <link rel="prev" href="introducao.html">
+      
+      
+        <link rel="next" href="capitulo-2---introducao-ao-nestjs.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Capítulo 1 - Configuração do ambiente de trabalho - Um exemplo cliente/servidor com Vue.js/NestJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Um exemplo cliente/servidor com Vue.js/NestJS";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-capitulo-1-configuracao-do-ambiente-de-trabalho" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Um exemplo cliente/servidor com Vue.js/NestJS" class="md-header__button md-logo" aria-label="Um exemplo cliente/servidor com Vue.js/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Um exemplo cliente/servidor com Vue.js/NestJS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Capítulo 1 - Configuração do ambiente de trabalho
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/br-vuejs-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Um exemplo cliente/servidor com Vue.js/NestJS" class="md-nav__button md-logo" aria-label="Um exemplo cliente/servidor com Vue.js/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Um exemplo cliente/servidor com Vue.js/NestJS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/br-vuejs-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introducao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Capítulo 1 - Configuração do ambiente de trabalho
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="capitulo-1---configuracao-do-ambiente-de-trabalho.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Capítulo 1 - Configuração do ambiente de trabalho
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-instalar-as-ferramentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Instalar as ferramentas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-criar-o-banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Criar o banco de dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-iniciar-o-servidor-nestjs-pela-primeira-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Iniciar o servidor [NestJS] pela primeira vez
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-testar-o-servidor-com-um-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Testar o servidor com um navegador
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-testando-o-servidor-nestjs-com-o-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Testando o servidor [NestJS] com o Postman
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Testando o servidor [NestJS] com o Postman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-fazer-login-e-obter-um-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. Fazer login e obter um token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-chamando-uma-rota-protegida-com-o-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. Chamando uma rota protegida com o token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-testar-as-rotas-post-addappointment-deleteappointment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.3. Testar as rotas POST (/addAppointment, /deleteAppointment)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-iniciar-o-cliente-vuejs-pela-primeira-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Iniciar o cliente [Vue.js] pela primeira vez
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-2---introducao-ao-nestjs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Capítulo 2 - Introdução ao [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-3---o-servidor-nestjs-da-aplicacao-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Capítulo 3 - O servidor [NestJS] da aplicação [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-4---introducao-ao-vuejs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Capítulo 4 - Introdução ao [Vue.js]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-5---o-cliente-vuejs-da-aplicacao-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Capítulo 5 - O cliente [Vue.js] da aplicação [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-6---conclusao-e-proximos-passos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Capítulo 6 - Conclusão e próximos passos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-1-mise-en-place-de-lenvironnement-de-travail" name="chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-capitulo-1-configuracao-do-ambiente-de-trabalho">2. <span style="color: #2e74b5">Capítulo 1 - Configuração do ambiente de trabalho</span></h1>
+<p><span id="installer-les-outils" name="installer-les-outils" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-instalar-as-ferramentas">2.1. <span style="color: #2e74b5">Instalar as ferramentas</span></h2>
+<ol>
+  <li><b>Node.js</b>: baixe e instale a versão 22 (ou posterior) em <a href="https://nodejs.org/"><u><span style="color: #0563c1">nodejs.org</span></u></a>. Verifique a instalação em um terminal:
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node --version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm --version
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<ol>
+  <li><b>Visual Studio Code </b>(VSCode): disponível para download gratuito em <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>. Instale a extensão “TypeScript and JavaScript Language Features” (geralmente já incluída).
+  </li>
+  <li><b>CLI do [NestJS]</b>, instalada uma única vez (no lado do cliente, o <b>[Vite] </b>não requer nenhuma instalação global — veja a introdução). Em um terminal do VSCode:
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-8" name="__codelineno-1-8"></a>npm install -g @nestjs/cli
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<ol>
+  <li><b>[MySQL] 8</b>: instale, por exemplo, com o <a href="https://www.apachefriends.org/"><u><span style="color: #0563c1">XAMPP</span></u></a>, <a href="https://laragon.org/"><u><span style="color: #0563c1">Laragon</span></u></a> (no Windows) ou diretamente com o <a href="https://dev.mysql.com/downloads/mysql/"><u><span style="color: #0563c1">[MySQL] Community Server</span></u></a>. Uma ferramenta gráfica de administração (phpMyAdmin, <i><mark style="background-color: #fff5ce">[MySQL] </mark></i>Workbench, DBeaver, HeidiSQL…) facilita o trabalho. Daqui em diante, usa-se a ferramenta Laragon.
+  </li>
+  <li><b>Postman</b>: disponível para download gratuito em <a href="https://www.postman.com/downloads/"><u><span style="color: #0563c1">postman.com</span></u></a>.
+  </li>
+</ol>
+
+<p>Se você baixou o código, ele está em duas pastas:</p>
+<p><img src="images/10000000000001C00000012DEE3E752A.png" width="224" height="150" style="width:5.93cm;height:3.979cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C00000012DEE3E752A.png" /></p>
+<ul>
+  <li>em [1], o cliente <i><mark style="background-color: #fff5ce">[Vue.js]</mark></i>;
+  </li>
+  <li>em [2], o servidor <i><mark style="background-color: #fff5ce">[NestJS]</mark></i>;
+  </li>
+</ul>
+
+<p>Abra a pasta [2] com o Visual Studio <em><mark style="background-color: #fff5ce">[File / Open Folder]</mark></em>:</p>
+<p><img src="images/10000000000002530000028174CA6D63.png" width="298" height="321" style="width:7.872cm;height:8.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002530000028174CA6D63.png" /></p>
+<p><span id="creer-la-base-de-donnees" name="creer-la-base-de-donnees" class="odt-bookmark-anchor"></span></p>
+<h2 id="22-criar-o-banco-de-dados">2.2. <span style="color: #2e74b5">Criar o banco de dados</span></h2>
+<p>Para criar o banco de dados <em><mark style="background-color: #fff5ce">[MySQL]</mark></em> usado pelo servidor <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>, usaremos a ferramenta Laragon. Em setembro de 2026, o Laragon está disponível na URL <em><mark style="background-color: #fff5ce">[Download Laragon – Fast &amp; Modern Dev Environment ]</mark></em>. O Laragon inclui ferramentas que permitem instalar um servidor PHP e os servidores SGBD e <em><mark style="background-color: #fff5ce">[MySQL]</mark></em>:</p>
+<p><img src="images/10000000000006440000030C86481A8B.png" width="643" height="312" style="width:17cm;height:8.266cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C86481A8B.png" /></p>
+<ul>
+  <li>em [1], um servidor web Apache;
+  </li>
+  <li>em [2], o SGBD <i><mark style="background-color: #fff5ce">[MySQL]</mark></i>;
+  </li>
+  <li>em [3], uma ferramenta de mensageria que não usaremos;
+  </li>
+  <li>[4] inicia todos os serviços (Apache, <i><mark style="background-color: #fff5ce">[MySQL]</mark></i>, MailPit);
+  </li>
+  <li>[5] exibe a página web da URL <i><mark style="background-color: #fff5ce">[http://localhost]</mark></i>. Por padrão, essa URL refere-se à pasta &lt;laragon-install&gt;\www, em que &lt;laragon-install&gt; é a pasta de instalação do Laragon;
+  </li>
+  <li>em [6], inicia a ferramenta HeidiSQL, que permite gerenciar bancos de dados MySQL. Usaremos essa ferramenta para criar o banco de dados usado pelo servidor [NestJS];
+  </li>
+  <li>Em [7], abre um terminal; todos os binários necessários ao Laragon estão no PATH;
+  </li>
+  <li>Em [8], abre uma janela do Windows Explorer na pasta associada à URL <i><mark style="background-color: #fff5ce">[http://localhost]</mark></i>;
+  </li>
+</ul>
+
+<p>A pasta de instalação do Laragon contém os seguintes itens:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DB00000324CA05B23E.png" width="314" height="345" style="display:inline-block; margin:4px;width:8.306cm;height:9.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DB00000324CA05B23E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Em [1], a pasta <i><mark style="background-color: #fff5ce">[bin]</mark></i> contém numerosos aplicativos:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000329000004CE02139058.png" width="404" height="615" style="display:inline-block; margin:4px;width:10.7cm;height:16.27cm;" class="odt-zoomable" data-zoom-src="images/1000000000000329000004CE02139058.png" /></td></tr></table>
+
+<ul>
+  <li>Em [1], o servidor web Apache;
+  </li>
+  <li>em [2], um terminal de linha de comando;
+  </li>
+  <li>em [3], um cliente <i><mark style="background-color: #fff5ce">[git]</mark></i> que permite gerenciar as diferentes versões de um projeto;
+  </li>
+  <li>em [4], um gerenciador de banco de dados;
+  </li>
+  <li>em [5], um gerenciador de e-mail;
+  </li>
+  <li>em [6], o SGBD <i><mark style="background-color: #fff5ce">[MySQL]</mark></i>;
+  </li>
+  <li>[7], outro servidor web;
+  </li>
+  <li>em [8], e <i><mark style="background-color: #fff5ce">[node.js] </mark></i>para executar scripts JavaScript;
+  </li>
+  <li>em [9], um editor de texto;
+  </li>
+  <li>em [10], o interpretador PHP;
+  </li>
+  <li>[11], o interpretador <i><mark style="background-color: #fff5ce">[Python]</mark></i>;
+  </li>
+  <li>[12], um servidor de cache;
+  </li>
+</ul>
+
+<p>O Laragon vem com um ambiente de desenvolvimento completo. Neste curso, usaremos apenas o SGBD <em><mark style="background-color: #fff5ce">[MySQL], </mark></em>[6], e a ferramenta <em><mark style="background-color: #fff5ce">[heidisql] </mark></em>para gerenciá-lo graficamente;</p>
+<p>Para criar o banco de dados <em><mark style="background-color: #fff5ce">[MySQL]</mark></em> necessário ao servidor <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>, proceda da seguinte forma:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006440000030C352A3F89.png" width="503" height="244" style="display:inline-block; margin:4px;width:13.301cm;height:6.468cm;" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C352A3F89.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>Em [1], todos os serviços devem estar iniciados;
+  </li>
+  <li>Em [2], a opção <i><mark style="background-color: #fff5ce">[Database]</mark></i> permite gerenciar o banco de dados;
+  </li>
+</ul>
+
+<p>A opção <em><mark style="background-color: #fff5ce">[Database] </mark></em>inicia um utilitário chamado HeidiSQL:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000008D2000003C91FBD37B4.png" width="621" height="266" style="display:inline-block; margin:4px;width:16.431cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000008D2000003C91FBD37B4.png" /></td></tr></table>
+
+<ul>
+  <li>Em [1], você pode escolher diversos SGBDs. O valor padrão fornecido é o SGBD MySQL. Ele serve;
+  </li>
+  <li>em [2], você faz login no HeidiSQL;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003FD0000018A35CBA47C.png" width="357" height="138" style="display:inline-block; margin:4px;width:9.449cm;height:3.649cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FD0000018A35CBA47C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002A4000001C70316A390.png" width="237" height="159" style="display:inline-block; margin:4px;width:6.26cm;height:4.21cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A4000001C70316A390.png" /></td></tr></table>
+
+<ul>
+  <li>Em [1-2], execute o arquivo SQL e depois selecione o arquivo <i><mark style="background-color: #fff5ce">[dbrdvmedecins.sql]</mark></i>, que está na <i><mark style="background-color: #fff5ce">pasta [rdvmedecins-nestjs-server/database]</mark></i>:
+  </li>
+</ul>
+
+<p><img src="images/10000000000001CA000002F2946B0D5A.png" width="198" height="324" style="width:5.226cm;height:8.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CA000002F2946B0D5A.png" /></p>
+<p>A execução do arquivo [3] criará o banco de dados <em><mark style="background-color: #fff5ce">[dbrdvmedecins]</mark></em> usado pelo servidor <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>. Para vê-lo, pressione F5 no HeidiSQL para atualizar a exibição:</p>
+<p><img src="images/10000000000002A50000031EFB250513.png" width="213" height="250" style="width:5.639cm;height:6.609cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A50000031EFB250513.png" /></p>
+<p>O banco de dados <em><mark style="background-color: #fff5ce">[dbrdvmedecins] </mark></em>foi criado. Você pode ver seu conteúdo:</p>
+<p><img src="images/100000000000053F00000271DC17B512.png" width="602" height="280" style="width:15.921cm;height:7.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053F00000271DC17B512.png" /></p>
+<ul>
+  <li>Em [1-3], a tabela <i><mark style="background-color: #fff5ce">[clients]</mark></i>;
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id] </mark></i>é a chave primária da tabela;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version] </mark></i>é o número de versão da linha. Esse número é incrementado a cada modificação da linha;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[title, last_name, first_name] </mark></i>identificam a pessoa;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000052A0000026BD3179386.png" width="602" height="282" style="width:15.921cm;height:7.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052A0000026BD3179386.png" /></p>
+<ul>
+  <li>em [1-3], a tabela <i><mark style="background-color: #fff5ce">[doctors]</mark></i>;
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id] </mark></i>é a chave primária da tabela;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version] </mark></i>é o número de versão da linha;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[title, last_name, first_name] </mark></i>identificam a pessoa;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005FE000002C6FB6943F4.png" width="602" height="278" style="width:15.921cm;height:7.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FE000002C6FB6943F4.png" /></p>
+<ul>
+  <li>Em [1-3], a tabela dos horários de consulta dos médicos:
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id]</mark></i>: chave primária;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version]</mark></i>: número de versão da linha;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[doctor_id]</mark></i>: chave estrangeira que referencia a chave primária do médico;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[start_hour, start_minute]</mark></i>: hora e minutos do início da consulta. Assim, <i><mark style="background-color: #fff5ce">[8,20] </mark></i>significa 8h20.
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[end_hour, end_minute]</mark></i>: hora e minutos do fim da consulta. 
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005EB0000024E23D6EF19.png" width="602" height="234" style="width:15.921cm;height:6.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EB0000024E23D6EF19.png" /></p>
+<ul>
+  <li>Em [1-3], a <i><mark style="background-color: #fff5ce">tabela [appointments]</mark></i> das consultas agendadas;
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id]</mark></i>: chave primária;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version]</mark></i>: número de versão;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[day]</mark></i>: data da consulta;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[slot_id]</mark></i>: chave estrangeira que referencia a chave primária do horário de consulta. Como um horário está ligado a um médico, sabemos qual médico atende essa consulta;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[client_id]</mark></i>: chave estrangeira para o número (chave primária) do paciente que comparece à consulta;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000066300000266A61EA136.png" width="602" height="226" style="width:15.921cm;height:5.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066300000266A61EA136.png" /></p>
+<ul>
+  <li>em [1-3], a tabela <i><mark style="background-color: #fff5ce">[users], </mark></i>que lista os usuários autorizados a usar a aplicação <i><mark style="background-color: #fff5ce">[NestJS]</mark></i>;
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id, version]</mark></i>: chave primária, número de versão;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[login, password]</mark></i>: credenciais do usuário;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[name]</mark></i>: nome do usuário;
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[role]</mark></i>: o papel do usuário. <i><mark style="background-color: #fff5ce">[ADMIN] </mark></i>tem acesso total. <i><mark style="background-color: #fff5ce">[USER] </mark></i>tem acesso somente leitura. Esse usuário pode ver a agenda de um médico, mas não pode agendar nem cancelar uma consulta;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span id="lancer-le-serveur-nestjs-pour-la-premiere-fois" name="lancer-le-serveur-nestjs-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="23-iniciar-o-servidor-nestjs-pela-primeira-vez">2.3. <span style="color: #2e74b5">Iniciar o servidor [NestJS] pela primeira vez</span></h2>
+<p>Na pasta <em><mark style="background-color: #fff5ce">[rdvmedecins-nestjs-server]</mark></em>, digite os seguintes comandos em um terminal:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npm install
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>cp .env.example .env
+</code></pre></div></td></tr></table></div>
+<p>O arquivo <em><mark style="background-color: #fff5ce">[.env]</mark></em> define variáveis de ambiente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Arquivo de configuração de exemplo.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># Copie este arquivo para [.env] e depois adapte os valores à sua máquina.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># O arquivo [.env] nunca deve ser compartilhado nem versionado (senhas).</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># porta de escuta do servidor NestJS (o servidor Spring original escutava na 8080)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="na">PORT</span><span class="o">=</span><span class="s">8080</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1"># parâmetros de conexão com o banco de dados MySQL [dbrdvmedecins]</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="na">DB_HOST</span><span class="o">=</span><span class="s">localhost</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="na">DB_PORT</span><span class="o">=</span><span class="s">3306</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="na">DB_USERNAME</span><span class="o">=</span><span class="s">root</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="na">DB_PASSWORD</span><span class="o">=</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="na">DB_DATABASE</span><span class="o">=</span><span class="s">dbrdvmedecins</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># somente em desenvolvimento: o TypeORM pode criar/atualizar automaticamente</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="c1"># as tabelas a partir das entidades. Está desativado aqui porque fornecemos nosso</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1"># próprio script SQL [database/dbrdvmedecins.sql], como fazia o projeto Spring original.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="na">DB_SYNCHRONIZE</span><span class="o">=</span><span class="s">false</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1"># autenticação (veja src/auth/)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1"># chave secreta usada para assinar/verificar tokens JWT - DEVE ser alterada</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="c1"># em produção (uma string aleatória longa, nunca versionada).</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="na">JWT_SECRET</span><span class="o">=</span><span class="s">change-me-to-a-long-random-string</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="c1"># validade de um token JWT (veja a documentação da biblioteca [ms]:</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="c1"># "60", "2h", "7d"...)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="na">JWT_EXPIRES_IN</span><span class="o">=</span><span class="s">2h</span>
+</code></pre></div></td></tr></table></div>
+<p>Personalize o arquivo <em><mark style="background-color: #fff5ce">[.env] </mark></em>recém-criado de acordo com a sua instalação do <em><mark style="background-color: #fff5ce">[MySQL]</mark></em> (nome de usuário, senha, porta). Como a autenticação foi adicionada (veja o Capítulo 3), esse arquivo também contém uma chave chamada JWT_SECRET: o valor de exemplo serve para acompanhar este documento, mas deve ser substituído por uma cadeia aleatória única, de sua autoria, antes de qualquer uso real.</p>
+<p>Inicie todos os serviços do Laragon <em><mark style="background-color: #fff5ce">[Start All]</mark></em>, caso ainda não tenha feito isso.</p>
+<p>Em seguida, inicie o servidor:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>npm run start:dev
+</code></pre></div></td></tr></table></div>
+<p>O console exibe, em ordem: a inicialização do módulo <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>, a lista das rotas expostas pelo controller e, por fim, a confirmação da inicialização:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>[Nest] RoutesResolver RdvMedecinsController {/}:
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>[Nest] RouterExplorer Mapped {/getAllDoctors, GET} route
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>[Nest] RouterExplorer Mapped {/getAllClients, GET} route
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>[Nest] RouterExplorer Mapped {/getAllSlots/:doctorId, GET} route
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>[Nest] RouterExplorer Mapped {/getDoctorAppointmentsOfDay/:doctorId/:day, GET} route
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>[Nest] RouterExplorer Mapped {/getDoctorScheduleOfDay/:doctorId/:day, GET} route
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>[Nest] RouterExplorer Mapped {/getDoctorById/:id, GET} route
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>[Nest] RouterExplorer Mapped {/getClientById/:id, GET} route
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>[Nest] RouterExplorer Mapped {/getSlotById/:id, GET} route
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>[Nest] RouterExplorer Mapped {/getAppointmentById/:id, GET} route
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>[Nest] RouterExplorer Mapped {/addAppointment, POST} route
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>[Nest] RouterExplorer Mapped {/deleteAppointment, POST} route
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>[Nest] RoutesResolver AuthController {/}:
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>[Nest] RouterExplorer Mapped {/login, POST} route
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>[Nest] NestApplication Nest application successfully started
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>[RdvMedecins] NestJS server started on http://localhost:8080
+</code></pre></div></td></tr></table></div>
+<p>Essa saída do console confirma que o servidor está de fato escutando na porta 8080 — <strong>exatamente a mesma porta do servidor Spring Boot do documento original</strong>, que foi escolhida deliberadamente por essa razão.</p>
+<p><span id="tester-le-serveur-avec-un-navigateur" name="tester-le-serveur-avec-un-navigateur" class="odt-bookmark-anchor"></span></p>
+<h2 id="24-testar-o-servidor-com-um-navegador">2.4. <span style="color: #2e74b5">Testar o servidor com um navegador</span></h2>
+<p>Como a autenticação foi adicionada (Capítulo 3), <strong>todas</strong> as rotas do <em><mark style="background-color: #fff5ce">[RdvMedecinsController] </mark></em>exigem um token JWT válido: um navegador sozinho, portanto, não serve mais para testá-las diretamente. Por exemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://localhost:[8080/getAllDoctors]
+</code></pre></div></td></tr></table></div>
+<p>agora retorna um erro 401 Unauthorized sem token:</p>
+<p><img src="images/100000000000048A000001AAB838806D.png" width="581" height="213" style="width:15.372cm;height:5.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048A000001AAB838806D.png" /></p>
+<p>Esse é o comportamento esperado: essa resposta confirma que o servidor protege corretamente suas rotas. O Postman (próxima seção) é necessário para obter um token e usá-lo.</p>
+<p><span id="tester-le-serveur-avec-postman" name="tester-le-serveur-avec-postman" class="odt-bookmark-anchor"></span></p>
+<h2 id="25-testando-o-servidor-nestjs-com-o-postman">2.5. <span style="color: #2e74b5">Testando o servidor [NestJS] com o Postman</span></h2>
+<p>A ferramenta Postman está disponível na URL <em><mark style="background-color: #fff5ce">[https://www.postman.com/downloads/]</mark></em>. Pode ser necessário criar uma conta.</p>
+<p>Inicie todos os serviços do Laragon e depois abra o aplicativo desktop do Postman:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DD000001CDECEE907C.png" width="294" height="184" style="display:inline-block; margin:4px;width:7.766cm;height:4.881cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DD000001CDECEE907C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020D0000014C25D78584.png" width="263" height="166" style="display:inline-block; margin:4px;width:6.946cm;height:4.392cm;" class="odt-zoomable" data-zoom-src="images/100000000000020D0000014C25D78584.png" /></td></tr></table>
+
+<ul>
+  <li>Em [1-2], crie uma requisição HTTP para consultar o servidor de gerenciamento de consultas dos médicos;
+  </li>
+</ul>
+
+<p><span id="se-connecter-et-obtenir-un-jeton" name="se-connecter-et-obtenir-un-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="251-fazer-login-e-obter-um-token">2.5.1. <span style="color: #1f4d78">Fazer login e obter um token</span></h3>
+<ol>
+  <li>Crie uma nova requisição no Postman com o método <b>POST</b>, URL <mark style="background-color: #fff5ce">http://localhost:8080/login</mark>;
+  </li>
+  <li>Na aba <b>[Body]</b>, selecione &quot;<b>raw</b>&quot;, depois o formato <b>JSON</b> e digite: {<mark style="background-color: #fff5ce">&quot;login&quot;: &quot;admin&quot;, &quot;password&quot;: &quot;admin&quot;</mark>} (ou &quot;user/user&quot; para testar o papel USER);
+  </li>
+  <li>Envie a requisição.
+  </li>
+</ol>
+
+<p><img src="images/100000000000057C000004484B69727F.png" width="602" height="470" style="width:15.921cm;height:12.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057C000004484B69727F.png" /></p>
+<ul>
+  <li>em [1-2], a requisição POST para o servidor <i><mark style="background-color: #fff5ce">[NestJS] </mark></i>em execução na porta 8080;
+  </li>
+  <li>em [3-5], o corpo da requisição. Ele transmite ao servidor a cadeia JSON contendo as credenciais do usuário que tenta fazer login, neste caso admin/admin;
+  </li>
+  <li>em [6], a resposta do servidor;
+  </li>
+  <li>em [7], o token de autenticação que as requisições seguintes devem enviar ao servidor para indicar “já me autentiquei”;
+  </li>
+</ul>
+
+<p>Copie o valor de accessToken: esse é o token que você deve incluir agora em todas as requisições seguintes. No exemplo acima, o token a copiar é “eyJ...zoM” (sem as aspas).</p>
+<p><span id="appeler-une-route-protegee-avec-le-jeton" name="appeler-une-route-protegee-avec-le-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="252-chamando-uma-rota-protegida-com-o-token">2.5.2. <span style="color: #1f4d78">Chamando uma rota protegida com o token</span></h3>
+<p>Para <mark style="background-color: #fff5ce">GET /getAllDoctors </mark>(ou qualquer outra rota do RdvMedecinsController), no Postman, na aba <strong>Authorization</strong>, selecione o tipo <strong>Bearer Token</strong> e cole o token copiado acima (o Postman adicionará então automaticamente o cabeçalho Authorization: Bearer &lt;token&gt;).</p>
+<p><img src="images/10000000000005590000054A64AFF51E.png" width="602" height="595" style="width:15.921cm;height:15.744cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005590000054A64AFF51E.png" /></p>
+<ul>
+  <li>em [1-2], a requisição enviada ao servidor. Ela solicita a lista de médicos do banco de dados;
+  </li>
+  <li>Em [3-5], a requisição deve enviar o token de autenticação. Em [4], selecione <i><mark style="background-color: #fff5ce">[Bearer Token], </mark></i>e em [5], cole o token de autenticação que você copiou antes;
+  </li>
+  <li>em [7], a resposta do servidor;
+  </li>
+</ul>
+
+<p><span id="tester-les-routes-post-ajouterrv-supprimerrv" name="tester-les-routes-post-ajouterrv-supprimerrv" class="odt-bookmark-anchor"></span></p>
+<h3 id="253-testar-as-rotas-post-addappointment-deleteappointment">2.5.3. <span style="color: #1f4d78">Testar as rotas POST (/addAppointment, /deleteAppointment)</span></h3>
+<p>Siga o mesmo procedimento acima (método POST, corpo JSON, Bearer Token), exatamente como o documento original usava a extensão do Chrome “Advanced Rest [Client]” para as mesmas rotas.</p>
+<p><strong>Nota</strong>: Você encontra as seguintes requisições do Postman na coleção <em><mark style="background-color: #fff5ce">[rdvmedecins-nestJS.postman_collection.json]</mark></em>:</p>
+<p><img src="images/100000000000029C0000030B2B251723.png" width="334" height="390" style="width:8.837cm;height:10.306cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029C0000030B2B251723.png" /></p>
+<p>No Postman, pressione Ctrl-0 para carregar a coleção:</p>
+<p><img src="images/10000000000005F4000002A81D1A727B.png" width="602" height="268" style="width:15.921cm;height:7.103cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F4000002A81D1A727B.png" /></p>
+<ul>
+  <li>Clique em [1] para carregar a coleção e selecione o arquivo da coleção. Depois de carregada, a coleção exibe suas requisições:
+  </li>
+</ul>
+
+<p><img src="images/10000000000003FC00000334CABD0B35.png" width="510" height="410" style="width:13.494cm;height:10.848cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FC00000334CABD0B35.png" /></p>
+<p>Para testar <mark style="background-color: #fff5ce">/addAppointment </mark>com o token de uma conta <strong>ADMIN</strong>:</p>
+<ol>
+  <li>Requisição do Postman, método <b>POST</b>, URL http://localhost:8080/addAppointment;
+  </li>
+  <li><b>Aba </b>Authorization: Bearer Token, token do admin;
+  </li>
+  <li><b>Aba </b>[Body], raw, JSON: {&quot;day&quot;: &quot;2026-09-13&quot;, &quot;clientId&quot;: 1, &quot;slotId&quot;: 5};
+  </li>
+  <li>Envie a requisição.
+  </li>
+</ol>
+
+<p><img src="images/100000000000058A00000529ABEBAFF4.png" width="602" height="561" style="width:15.921cm;height:14.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058A00000529ABEBAFF4.png" /></p>
+<p>Você pode usar o HeidiSQL para verificar se uma consulta foi adicionada ao banco de dados:</p>
+<p><img src="images/10000000000006A400000266AF435029.png" width="602" height="218" style="width:15.921cm;height:5.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006A400000266AF435029.png" /></p>
+<p>Para testar <mark style="background-color: #fff5ce">/deleteAppointment</mark>, siga o mesmo procedimento com o corpo {&quot;appointmentId&quot;: 2} (o ID da consulta a cancelar (8) acima).</p>
+<p><img src="images/100000000000058D0000034C0DB83F3D.png" width="602" height="357" style="width:15.921cm;height:9.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D0000034C0DB83F3D.png" /></p>
+<ul>
+  <li>em [4], onde o número acima é a consulta a ser excluída;
+  </li>
+</ul>
+
+<p><img src="images/10000000000005B2000003C2245B59CC.png" width="602" height="397" style="width:15.921cm;height:10.504cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B2000003C2245B59CC.png" /></p>
+<ul>
+  <li>em [5-7], o token de autenticação;
+  </li>
+  <li>em [9], a resposta do servidor. <i><mark style="background-color: #fff5ce">[status=0] </mark></i>indica que a operação foi bem-sucedida. Você pode verificar isso com o HeidiSQL:
+  </li>
+</ul>
+
+<p><img src="images/100000000000058D000002644C63689A.png" width="602" height="259" style="width:15.921cm;height:6.856cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D000002644C63689A.png" /></p>
+<ul>
+  <li>em [3], a consulta nº 2 não existe mais;
+  </li>
+</ul>
+
+<p><strong>Experimente</strong>: repita a mesma requisição /addAppointment usando o token da conta <strong>USER</strong> (user/user) em vez do token do admin: a resposta passa a ser 403 Forbidden, com a mensagem “role [USER] does not allow this action (required role: ADMIN)” — uma demonstração concreta do controle de acesso por papéis implementado no Capítulo 3.</p>
+<p><span id="lancer-le-client-react-pour-la-premiere-fois" name="lancer-le-client-react-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="26-iniciar-o-cliente-vuejs-pela-primeira-vez">2.6. <span style="color: #2e74b5">Iniciar o cliente [Vue.js] pela primeira vez</span></h2>
+<p>Na pasta rdvmedecins-vuejs-client (o servidor <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> deve ter sido iniciado antes):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npm install
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>npm start
+</code></pre></div></td></tr></table></div>
+<p>Em seguida, abra<mark style="background-color: #fff5ce"> http://localhost:4200 </mark>em um navegador: a tela de login aparece primeiro (veja o Capítulo 5).</p>
+<p><img src="images/100000000000044C0000035207E593BD.png" width="359" height="277" style="width:9.5cm;height:7.34cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000044C0000035207E593BD.png" /></p>
+<ul>
+  <li>em [1], a URL do servidor que entrega a aplicação <i><mark style="background-color: #fff5ce">[Vue.js]</mark></i>;
+  </li>
+  <li>[2], a URL do servidor <i><mark style="background-color: #fff5ce">[NestJS] </mark></i>que gerencia o banco de dados [dbrdvmedecins];
+  </li>
+</ul>
+
+<p>É importante entender que há aqui dois servidores web, um dos quais atua como cliente do outro.</p>
+<p>Dois botões rotulados “FR” e “EN” no canto superior direito permitem alternar a interface para o francês, mesmo antes do login. Faça login com uma das duas contas de demonstração (admin/admin, acesso total, ou user/user, somente leitura) para acessar o restante da aplicação. O Capítulo 5 traz um guia detalhado de uso desse cliente, com capturas de tela para cada etapa.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este tutorial, escrito pela IA <strong>Claude</strong>, da Anthropic, e revisado por <strong>Serge Tahé</strong>, é disponibilizado ao público sob os termos da licença
+        <em>Creative Commons Atribuição – Uso Não Comercial –
+        Compartilha Igual 3.0 Não Adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

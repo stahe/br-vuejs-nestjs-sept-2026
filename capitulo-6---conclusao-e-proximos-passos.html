@@ -1,0 +1,746 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Um exemplo cliente/servidor com Vue.js/NestJS">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/br-vuejs-nestjs-sept-2026/capitulo-6---conclusao-e-proximos-passos.html">
+      
+      
+        <link rel="prev" href="capitulo-5---o-cliente-vuejs-da-aplicacao-rdvmedecins.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>7. Capítulo 6 - Conclusão e próximos passos - Um exemplo cliente/servidor com Vue.js/NestJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Um exemplo cliente/servidor com Vue.js/NestJS";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-capitulo-6-conclusao-e-proximos-passos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Um exemplo cliente/servidor com Vue.js/NestJS" class="md-header__button md-logo" aria-label="Um exemplo cliente/servidor com Vue.js/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Um exemplo cliente/servidor com Vue.js/NestJS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Capítulo 6 - Conclusão e próximos passos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/br-vuejs-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Um exemplo cliente/servidor com Vue.js/NestJS" class="md-nav__button md-logo" aria-label="Um exemplo cliente/servidor com Vue.js/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Um exemplo cliente/servidor com Vue.js/NestJS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/br-vuejs-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introducao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-1---configuracao-do-ambiente-de-trabalho.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Capítulo 1 - Configuração do ambiente de trabalho
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-2---introducao-ao-nestjs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Capítulo 2 - Introdução ao [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-3---o-servidor-nestjs-da-aplicacao-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Capítulo 3 - O servidor [NestJS] da aplicação [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-4---introducao-ao-vuejs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Capítulo 4 - Introdução ao [Vue.js]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="capitulo-5---o-cliente-vuejs-da-aplicacao-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Capítulo 5 - O cliente [Vue.js] da aplicação [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Capítulo 6 - Conclusão e próximos passos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="capitulo-6---conclusao-e-proximos-passos.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Capítulo 6 - Conclusão e próximos passos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-o-que-foi-construido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. O que foi construído
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-o-que-fica-fora-do-escopo-ou-a-ser-portado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. O que fica fora do escopo ou a ser portado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. O que fica fora do escopo ou a ser portado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-internacionalizacao-francesinglestratada-neste-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1. Internacionalização francês/inglês—tratada neste documento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-o-modo-debug-do-clientedeliberadamente-excluido-do-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2. O modo “debug” do cliente—deliberadamente excluído do escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-atraso-de-rede-artificialadiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3. Atraso de rede artificial—adiado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-uma-observacao-sobre-a-metodologia-usada-neste-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Uma observação sobre a metodologia usada neste documento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-para-ir-mais-longe-desde-ja" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Para ir mais longe desde já
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-6-conclusion-et-etapes-suivantes" name="chapitre-6-conclusion-et-etapes-suivantes" class="odt-bookmark-anchor"></span></p>
+<h1 id="7-capitulo-6-conclusao-e-proximos-passos">7. <span style="color: #2e74b5">Capítulo 6 - Conclusão e próximos passos</span></h1>
+<p><span id="ce-qui-a-ete-construit" name="ce-qui-a-ete-construit" class="odt-bookmark-anchor"></span></p>
+<h2 id="71-o-que-foi-construido">7.1. <span style="color: #2e74b5">O que foi construído</span></h2>
+<p>Este documento adaptou o núcleo funcional <strong>e a autenticação</strong> da aplicação <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> do documento original de 2014 para tecnologias atuais:</p>
+<ul>
+  <li>um servidor <b>[NestJS]</b> completo (entidades <i><mark style="background-color: #fff5ce">[TypeORM]</mark></i>, DAO, camada de negócio, camada web), expondo as mesmas 11 rotas de negócio (JSON) do servidor Spring 4 original, na mesma porta (8080), todas agora protegidas por um token (JWT);
+  </li>
+  <li>uma camada de <b>autenticação</b> (<i><mark style="background-color: #fff5ce">[@nestjs/passport] </mark></i>+ <i><mark style="background-color: #fff5ce">[@nestjs/jwt]</mark></i>): autenticação por login/senha (POST /login), um token assinado apresentado a cada requisição seguinte e controle de acesso baseado em papéis (<i><mark style="background-color: #fff5ce">[@Roles]</mark></i>(&#x27;ADMIN&#x27;) + <i><mark style="background-color: #fff5ce">[RolesGuard]</mark></i>) nas duas rotas que modificam dados;
+  </li>
+  <li>um cliente <b>[Vue.js] </b>(Composition API, <b>setup script</b>) que oferece as mesmas funcionalidades do cliente AngularJS 1.x original—seleção de um médico e de uma data, visualização da agenda, reserva e cancelamento de uma consulta—complementado por uma tela de login, uma sessão persistente (localStorage), uma interface Bootstrap que se adapta ao papel do usuário conectado (botões de agendamento ocultos para o papel USER) e a possibilidade de alternar a interface entre francês e inglês (<i><mark style="background-color: #fff5ce">[vue-i18n]</mark></i>).
+  </li>
+</ul>
+
+<p>O núcleo do banco de dados não mudou (as mesmas tabelas <em><mark style="background-color: #fff5ce">[doctors/clients/slots/appointments]</mark></em>, as mesmas restrições), exceto pela adição da tabela <em><mark style="background-color: #fff5ce">[users]</mark></em>; a arquitetura geral em camadas também não mudou—apenas as ferramentas que a implementam foram atualizadas.</p>
+<p>Há duas diferenças intencionais em relação ao processo de autenticação do documento original, documentadas em detalhe no Capítulo 3: um token <strong>JWT</strong> em vez do cabeçalho HTTP Basic enviado a cada requisição, e uma única coluna <em><mark style="background-color: #fff5ce">[role]</mark></em> por usuário em vez de uma relação muitos-para-muitos entre três tabelas. Uma terceira diferença—esta funcional—foi escolhida deliberadamente para este port: o papel USER agora pode visualizar as agendas (somente leitura), ao passo que no original servia apenas para ilustrar uma negação total de acesso.</p>
+<p><span id="ce-qui-reste-hors-perimetre-ou-a-porter" name="ce-qui-reste-hors-perimetre-ou-a-porter" class="odt-bookmark-anchor"></span></p>
+<h2 id="72-o-que-fica-fora-do-escopo-ou-a-ser-portado">7.2. <span style="color: #2e74b5">O que fica fora do escopo ou a ser portado</span></h2>
+<p>Além do que foi apresentado, o documento original abordava dois temas adicionais—um dos quais já foi tratado, outro deliberadamente deixado de fora, e o terceiro adiado para uma etapa posterior:</p>
+<p><span id="linternationalisation-francaisanglais---traitee-dans-ce-document" name="linternationalisation-francaisanglais---traitee-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h3 id="721-internacionalizacao-francesinglestratada-neste-documento">7.2.1. <span style="color: #1f4d78">Internacionalização francês/inglês—tratada neste documento</span></h3>
+<p>O documento original propunha alternar a interface entre francês e inglês usando a biblioteca <em><mark style="background-color: #fff5ce">[angular-translate]</mark></em>. Este port implementa essa funcionalidade usando seu equivalente no ecossistema <em><mark style="background-color: #fff5ce">[Vue.js]</mark></em> atual, <em><mark style="background-color: #fff5ce">[vue-i18n] </mark></em>(cujos dicionários fr.json/en.json são carregados por HTTP a partir da pasta <em><mark style="background-color: #fff5ce">[public/i18n/]</mark></em> por meio de uma pequena função de carregamento escrita para este port, já que não existe um plugin HTTP oficial equivalente ao usado no lado React) - Veja o Capítulo 5. Como o <em><mark style="background-color: #fff5ce">[angular-translate] </mark></em>antes dele, <em><mark style="background-color: #fff5ce">[vue-i18n] </mark></em>permite alternar os idiomas em tempo real, sem recarregar a página—um comportamento fiel ao do documento original.</p>
+<p><span id="le-mode-debug-du-client---deliberement-hors-perimetre" name="le-mode-debug-du-client---deliberement-hors-perimetre" class="odt-bookmark-anchor"></span></p>
+<h3 id="722-o-modo-debug-do-clientedeliberadamente-excluido-do-escopo">7.2.2. <span style="color: #1f4d78">O modo “debug” do cliente—deliberadamente excluído do escopo</span></h3>
+<p>O documento original incluía um modo de exibição técnico, ativável pela interface, que dava acesso ao modelo bruto ($scope do AngularJS 1.x) da view atual—um recurso útil em 2014, quando as ferramentas de desenvolvimento disponíveis para inspecionar uma aplicação AngularJS ainda eram limitadas. Este port não o recria: <strong>as ferramentas de desenvolvimento [Vue.js] atuais</strong> (<em><mark style="background-color: #fff5ce">[Vue.js] </mark></em>DevTools, extensão oficial do navegador) oferecem hoje, fora da própria aplicação, uma inspeção muito mais completa dos componentes, de seu estado e de suas props do que ofereceria um painel de depuração personalizado reintegrado à interface. Adicionar esse painel equivaleria a criar uma versão inferior de uma ferramenta já fornecida pelo ecossistema—esta decisão é, portanto, definitiva, e não um mero adiamento.</p>
+<p><span id="un-delai-reseau-artificiel---reporte" name="un-delai-reseau-artificiel---reporte" class="odt-bookmark-anchor"></span></p>
+<h3 id="723-atraso-de-rede-artificialadiado">7.2.3. <span style="color: #1f4d78">Atraso de rede artificial—adiado</span></h3>
+<p>O documento original permitia definir um atraso artificial antes de cada resposta do servidor, para observar o comportamento da interface em uma rede lenta (indicadores de carregamento, desativação temporária de botões etc.). Este recurso ainda não tem equivalente neste port.</p>
+<p><span id="un-mot-sur-la-methode-suivie-dans-ce-document" name="un-mot-sur-la-methode-suivie-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h2 id="73-uma-observacao-sobre-a-metodologia-usada-neste-documento">7.3. <span style="color: #2e74b5">Uma observação sobre a metodologia usada neste documento</span></h2>
+<p>Este documento foi escrito com base inteiramente no código que foi realmente executado: cada rota do servidor foi testada (incluindo os cenários de autenticação: login bem-sucedido/malsucedido, acesso sem token, acesso com o papel errado), e cada captura de tela do cliente (Capítulo 5) foi obtida interagindo com a aplicação real em execução—um navegador Chromium controlado automaticamente, usando os dados de demonstração do script SQL fornecido. Essa abordagem também revelou, durante a preparação deste documento, um problema específico quanto ao uso do <em><mark style="background-color: #fff5ce">[TypeORM] </mark></em>com colunas calculadas (<em><mark style="background-color: #fff5ce">[@RelationId]</mark></em>)—que foi relatado e corrigido no Capítulo 3, diretamente no código entregue. Essa exigência também explica por que as capturas de tela do Postman não foram simuladas: essa etapa ficou a cargo do autor do documento, que as criou diretamente a partir de sua própria estação de trabalho (veja o Capítulo 1).</p>
+<p><span id="pour-aller-plus-loin-des-maintenant" name="pour-aller-plus-loin-des-maintenant" class="odt-bookmark-anchor"></span></p>
+<h2 id="74-para-ir-mais-longe-desde-ja">7.4. <span style="color: #2e74b5">Para ir mais longe desde já</span></h2>
+<p>Enquanto se aguardam as próximas etapas deste port, o servidor e o cliente incluídos neste documento oferecem uma base pronta para uso, para você experimentar por conta própria:</p>
+<ul>
+  <li>adicionar um novo médico ou um novo paciente (atualmente, isso só pode ser feito modificando o script SQL—uma rota chamada /addDoctor, também protegida por <i><mark style="background-color: #fff5ce">[@Roles]</mark></i>(&#x27;ADMIN&#x27;), poderia ser um bom primeiro exercício);
+  </li>
+  <li>adicionar um terceiro papel, ou um usuário com vários papéis—uma oportunidade de avaliar, de forma bem concreta, o custo de abandonar a simplificação da coluna única oferecida por <i><mark style="background-color: #fff5ce">[role] </mark></i>(veja o Capítulo 3);
+  </li>
+  <li>modificar a apresentação do cliente (cores, layout) sem alterar o servidor—uma boa maneira de verificar se a arquitetura em camadas do cliente funciona como anunciado;
+  </li>
+  <li>Leia o arquivo README de cada pasta do servidor e do cliente entregues: cada um explica, em seu contexto, o papel dos arquivos que contém.
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este tutorial, escrito pela IA <strong>Claude</strong>, da Anthropic, e revisado por <strong>Serge Tahé</strong>, é disponibilizado ao público sob os termos da licença
+        <em>Creative Commons Atribuição – Uso Não Comercial –
+        Compartilha Igual 3.0 Não Adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
